@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GojaChat - Test API</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 30px;
+        }
+        
+        .api-section {
+            margin-bottom: 40px;
+        }
+        
+        .api-section h2 {
+            color: #1f2937;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 10px;
+        }
+        
+        .endpoint {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .endpoint h3 {
+            color: #3b82f6;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .endpoint-url {
+            background: #1f2937;
+            color: #10b981;
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+        
+        .btn {
+            background: #3b82f6;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background 0.3s;
+        }
+        
+        .btn:hover {
+            background: #2563eb;
+        }
+        
+        .result {
+            background: #f1f5f9;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            padding: 15px;
+            margin-top: 15px;
+            max-height: 300px;
+            overflow-y: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85rem;
+            white-space: pre-wrap;
+        }
+        
+        .status {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        
+        .status.success {
+            background: #dcfce7;
+            color: #166534;
+        }
+        
+        .status.error {
+            background: #fef2f2;
+            color: #dc2626;
+        }
+        
+        .demo-accounts {
+            background: #f0f9ff;
+            border: 1px solid #bae6fd;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .demo-accounts h3 {
+            color: #0369a1;
+            margin-bottom: 15px;
+        }
+        
+        .account {
+            display: inline-block;
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 10px 15px;
+            margin: 5px;
+            font-size: 0.9rem;
+        }
+        
+        .account strong {
+            color: #3b82f6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 GojaChat API</h1>
+            <p>Interface de test pour l'API de messagerie en temps réel</p>
+        </div>
+        
+        <div class="content">
+            <div class="demo-accounts">
+                <h3>📋 Comptes de démonstration</h3>
+                <div class="account"><strong>Alice:</strong> alice@gojachat.com / password</div>
+                <div class="account"><strong>Bob:</strong> bob@gojachat.com / password</div>
+                <div class="account"><strong>Charlie:</strong> charlie@gojachat.com / password</div>
+                <div class="account"><strong>Diana:</strong> diana@gojachat.com / password</div>
+            </div>
+            
+            <div class="api-section">
+                <h2>👥 Users</h2>
+                <div class="endpoint">
+                    <h3>GET /users</h3>
+                    <div class="endpoint-url">http://localhost:3001/users</div>
+                    <button class="btn" onclick="testEndpoint('users')">Test</button>
+                    <div id="users-result" class="result" style="display: none;"></div>
+                </div>
+            </div>
+            
+            <div class="api-section">
+                <h2>💬 Conversations</h2>
+                <div class="endpoint">
+                    <h3>GET /conversations</h3>
+                    <div class="endpoint-url">http://localhost:3001/conversations</div>
+                    <button class="btn" onclick="testEndpoint('conversations')">Test</button>
+                    <div id="conversations-result" class="result" style="display: none;"></div>
+                </div>
+            </div>
+            
+            <div class="api-section">
+                <h2>📨 Messages</h2>
+                <div class="endpoint">
+                    <h3>GET /messages</h3>
+                    <div class="endpoint-url">http://localhost:3001/messages</div>
+                    <button class="btn" onclick="testEndpoint('messages')">Test</button>
+                    <div id="messages-result" class="result" style="display: none;"></div>
+                </div>
+                
+                <div class="endpoint">
+                    <h3>GET /messages?conversationId=1</h3>
+                    <div class="endpoint-url">http://localhost:3001/messages?conversationId=1</div>
+                    <button class="btn" onclick="testEndpoint('messages?conversationId=1')">Test</button>
+                    <div id="messages-conv-result" class="result" style="display: none;"></div>
+                </div>
+            </div>
+            
+            <div class="api-section">
+                <h2>🔔 Notifications</h2>
+                <div class="endpoint">
+                    <h3>GET /notifications</h3>
+                    <div class="endpoint-url">http://localhost:3001/notifications</div>
+                    <button class="btn" onclick="testEndpoint('notifications')">Test</button>
+                    <div id="notifications-result" class="result" style="display: none;"></div>
+                </div>
+            </div>
+            
+            <div class="api-section">
+                <h2>📊 Complete Database</h2>
+                <div class="endpoint">
+                    <h3>GET /db</h3>
+                    <div class="endpoint-url">http://localhost:3001/db</div>
+                    <button class="btn" onclick="testEndpoint('db')">Test</button>
+                    <div id="db-result" class="result" style="display: none;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        async function testEndpoint(endpoint) {
+            const resultDiv = document.getElementById(endpoint.replace('?', '-').replace('=', '-') + '-result');
+            const button = event.target;
+            
+            // Show result
+            resultDiv.style.display = 'block';
+            resultDiv.innerHTML = '⏳ Loading...';
+            
+            try {
+                const response = await fetch(`http://localhost:3001/${endpoint}`);
+                const data = await response.json();
+                
+                if (response.ok) {
+                    resultDiv.innerHTML = `✅ Success (${response.status})\n\n${JSON.stringify(data, null, 2)}`;
+                    resultDiv.style.borderColor = '#10b981';
+                } else {
+                    resultDiv.innerHTML = `❌ Error (${response.status})\n\n${JSON.stringify(data, null, 2)}`;
+                    resultDiv.style.borderColor = '#ef4444';
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `❌ Connection error\n\n${error.message}`;
+                resultDiv.style.borderColor = '#ef4444';
+            }
+        }
+        
+        // Automatic test on load
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                testEndpoint('users');
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

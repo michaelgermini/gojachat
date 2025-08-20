@@ -1,0 +1,241 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "alice",
+      "email": "alice@gojachat.com",
+      "avatar": "https://i.pravatar.cc/150?img=1",
+      "status": "online",
+      "lastSeen": "2024-01-15T10:30:00Z"
+    },
+    {
+      "id": 2,
+      "username": "bob",
+      "email": "bob@gojachat.com",
+      "avatar": "https://i.pravatar.cc/150?img=2",
+      "status": "online",
+      "lastSeen": "2024-01-15T10:25:00Z"
+    },
+    {
+      "id": 3,
+      "username": "charlie",
+      "email": "charlie@gojachat.com",
+      "avatar": "https://i.pravatar.cc/150?img=3",
+      "status": "away",
+      "lastSeen": "2024-01-15T09:45:00Z"
+    },
+    {
+      "id": 4,
+      "username": "diana",
+      "email": "diana@gojachat.com",
+      "avatar": "https://i.pravatar.cc/150?img=4",
+      "status": "offline",
+      "lastSeen": "2024-01-15T08:20:00Z"
+    }
+  ],
+  "conversations": [
+    {
+      "id": 1,
+      "name": "Équipe GojaChat",
+      "type": "group",
+      "participants": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "createdAt": "2024-01-10T08:00:00Z",
+      "lastMessage": {
+        "id": 15,
+        "content": "N'oubliez pas la réunion demain à 10h !",
+        "senderId": 1,
+        "timestamp": "2024-01-15T10:30:00Z"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Alice & Bob",
+      "type": "direct",
+      "participants": [
+        1,
+        2
+      ],
+      "createdAt": "2024-01-12T14:30:00Z",
+      "lastMessage": {
+        "id": 12,
+        "content": "Salut ! Comment ça va ?",
+        "senderId": 2,
+        "timestamp": "2024-01-15T10:25:00Z"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Charlie & Diana",
+      "type": "direct",
+      "participants": [
+        3,
+        4
+      ],
+      "createdAt": "2024-01-13T16:45:00Z",
+      "lastMessage": {
+        "id": 8,
+        "content": "À bientôt !",
+        "senderId": 3,
+        "timestamp": "2024-01-15T09:45:00Z"
+      }
+    }
+  ],
+  "messages": [
+    {
+      "id": 1,
+      "conversationId": 1,
+      "senderId": 1,
+      "content": "Bonjour tout le monde ! 👋",
+      "timestamp": "2024-01-15T08:00:00Z",
+      "type": "text"
+    },
+    {
+      "id": 2,
+      "conversationId": 1,
+      "senderId": 2,
+      "content": "Salut Alice !",
+      "timestamp": "2024-01-15T08:05:00Z",
+      "type": "text"
+    },
+    {
+      "id": 3,
+      "conversationId": 1,
+      "senderId": 3,
+      "content": "Bonjour ! Comment va le projet ?",
+      "timestamp": "2024-01-15T08:10:00Z",
+      "type": "text"
+    },
+    {
+      "id": 4,
+      "conversationId": 1,
+      "senderId": 4,
+      "content": "Tout va bien de mon côté !",
+      "timestamp": "2024-01-15T08:15:00Z",
+      "type": "text"
+    },
+    {
+      "id": 5,
+      "conversationId": 2,
+      "senderId": 1,
+      "content": "Salut Bob !",
+      "timestamp": "2024-01-15T09:00:00Z",
+      "type": "text"
+    },
+    {
+      "id": 6,
+      "conversationId": 2,
+      "senderId": 2,
+      "content": "Salut Alice ! Comment ça va ?",
+      "timestamp": "2024-01-15T10:25:00Z",
+      "type": "text"
+    },
+    {
+      "id": 7,
+      "conversationId": 3,
+      "senderId": 3,
+      "content": "Salut Diana !",
+      "timestamp": "2024-01-15T09:30:00Z",
+      "type": "text"
+    },
+    {
+      "id": 8,
+      "conversationId": 3,
+      "senderId": 3,
+      "content": "À bientôt !",
+      "timestamp": "2024-01-15T09:45:00Z",
+      "type": "text"
+    },
+    {
+      "id": 9,
+      "conversationId": 1,
+      "senderId": 2,
+      "content": "J'ai terminé la fonctionnalité de chat en temps réel",
+      "timestamp": "2024-01-15T10:00:00Z",
+      "type": "text"
+    },
+    {
+      "id": 10,
+      "conversationId": 1,
+      "senderId": 1,
+      "content": "Parfait ! Peux-tu faire un pull request ?",
+      "timestamp": "2024-01-15T10:05:00Z",
+      "type": "text"
+    },
+    {
+      "id": 11,
+      "conversationId": 1,
+      "senderId": 3,
+      "content": "Je vais tester ça tout de suite",
+      "timestamp": "2024-01-15T10:10:00Z",
+      "type": "text"
+    },
+    {
+      "id": 12,
+      "conversationId": 2,
+      "senderId": 2,
+      "content": "Salut ! Comment ça va ?",
+      "timestamp": "2024-01-15T10:25:00Z",
+      "type": "text"
+    },
+    {
+      "id": 13,
+      "conversationId": 1,
+      "senderId": 4,
+      "content": "J'ai ajouté les tests unitaires",
+      "timestamp": "2024-01-15T10:20:00Z",
+      "type": "text"
+    },
+    {
+      "id": 14,
+      "conversationId": 1,
+      "senderId": 1,
+      "content": "Excellent travail Diana !",
+      "timestamp": "2024-01-15T10:25:00Z",
+      "type": "text"
+    },
+    {
+      "id": 15,
+      "conversationId": 1,
+      "senderId": 1,
+      "content": "N'oubliez pas la réunion demain à 10h !",
+      "timestamp": "2024-01-15T10:30:00Z",
+      "type": "text"
+    },
+    {
+      "conversationId": 2,
+      "senderId": 3,
+      "content": "hello",
+      "type": "text",
+      "timestamp": "2025-08-20T09:15:22.492Z",
+      "id": 16
+    },
+    {
+      "conversationId": 2,
+      "senderId": 1,
+      "content": "hello",
+      "type": "text",
+      "timestamp": "2025-08-20T10:08:52.821Z",
+      "id": 17
+    }
+  ],
+  "notifications": [
+    {
+      "id": 1,
+      "userId": 1,
+      "type": "message",
+      "title": "Nouveau message",
+      "body": "Bob vous a envoyé un message",
+      "data": {
+        "conversationId": 2,
+        "senderId": 2
+      },
+      "read": false,
+      "createdAt": "2024-01-15T10:25:00Z"
+    }
+  ]
+}
