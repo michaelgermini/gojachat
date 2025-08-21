@@ -100,34 +100,34 @@ npm run dev
 # Unit tests
 npm run test
 
-# Tests avec couverture
+# Tests with coverage
 npm run test:coverage
 ```
 
-## 📦 Déploiement
+## 📦 Deployment
 
 ### Web (Vercel)
-- Déploiement automatique via GitHub Actions
-- Preview pour chaque PR
-- Production sur merge main
+- Automatic deployment via GitHub Actions
+- Preview for each PR
+- Production on main merge
 
 ### Mobile (Expo)
-- Build automatique via EAS
+- Automatic build via EAS
 - Distribution via Expo Go
 - Stores (iOS/Android) via EAS Submit
 
-## 🤝 Contribution
+## 🤝 Contributing
 
-1. Fork le projet
-2. Créer une branche feature (`git checkout -b feature/AmazingFeature`)
-3. Commit les changements (`git commit -m 'Add some AmazingFeature'`)
-4. Push vers la branche (`git push origin feature/AmazingFeature`)
-5. Ouvrir une Pull Request
+1. Fork the project
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-## 📄 Licence
+## 📄 License
 
-Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
+This project is licensed under the MIT License. See the `LICENSE` file for details.
 
-## 👥 Équipe
+## 👥 Team
 
-- Développé avec ❤️ pour démontrer l'intégration front ↔ back
+- Developed with ❤️ to demonstrate front ↔ back integration

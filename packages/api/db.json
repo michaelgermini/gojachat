@@ -36,7 +36,7 @@
   "conversations": [
     {
       "id": 1,
-      "name": "Équipe GojaChat",
+      "name": "GojaChat Team",
       "type": "group",
       "participants": [
         1,
@@ -47,7 +47,7 @@
       "createdAt": "2024-01-10T08:00:00Z",
       "lastMessage": {
         "id": 15,
-        "content": "N'oubliez pas la réunion demain à 10h !",
+        "content": "Don't forget the meeting tomorrow at 10am!",
         "senderId": 1,
         "timestamp": "2024-01-15T10:30:00Z"
       }
@@ -63,7 +63,7 @@
       "createdAt": "2024-01-12T14:30:00Z",
       "lastMessage": {
         "id": 12,
-        "content": "Salut ! Comment ça va ?",
+        "content": "Hi! How are you?",
         "senderId": 2,
         "timestamp": "2024-01-15T10:25:00Z"
       }
@@ -79,7 +79,7 @@
       "createdAt": "2024-01-13T16:45:00Z",
       "lastMessage": {
         "id": 8,
-        "content": "À bientôt !",
+        "content": "See you soon!",
         "senderId": 3,
         "timestamp": "2024-01-15T09:45:00Z"
       }
@@ -90,7 +90,7 @@
       "id": 1,
       "conversationId": 1,
       "senderId": 1,
-      "content": "Bonjour tout le monde ! 👋",
+      "content": "Hello everyone! 👋",
       "timestamp": "2024-01-15T08:00:00Z",
       "type": "text"
     },
@@ -98,7 +98,7 @@
       "id": 2,
       "conversationId": 1,
       "senderId": 2,
-      "content": "Salut Alice !",
+      "content": "Hi Alice!",
       "timestamp": "2024-01-15T08:05:00Z",
       "type": "text"
     },
@@ -106,7 +106,7 @@
       "id": 3,
       "conversationId": 1,
       "senderId": 3,
-      "content": "Bonjour ! Comment va le projet ?",
+      "content": "Hello! How is the project going?",
       "timestamp": "2024-01-15T08:10:00Z",
       "type": "text"
     },
@@ -114,7 +114,7 @@
       "id": 4,
       "conversationId": 1,
       "senderId": 4,
-      "content": "Tout va bien de mon côté !",
+      "content": "Everything is going well on my end!",
       "timestamp": "2024-01-15T08:15:00Z",
       "type": "text"
     },
@@ -122,7 +122,7 @@
       "id": 5,
       "conversationId": 2,
       "senderId": 1,
-      "content": "Salut Bob !",
+      "content": "Hi Bob!",
       "timestamp": "2024-01-15T09:00:00Z",
       "type": "text"
     },
@@ -130,7 +130,7 @@
       "id": 6,
       "conversationId": 2,
       "senderId": 2,
-      "content": "Salut Alice ! Comment ça va ?",
+      "content": "Hi Alice! How are you?",
       "timestamp": "2024-01-15T10:25:00Z",
       "type": "text"
     },
@@ -138,7 +138,7 @@
       "id": 7,
       "conversationId": 3,
       "senderId": 3,
-      "content": "Salut Diana !",
+      "content": "Hi Diana!",
       "timestamp": "2024-01-15T09:30:00Z",
       "type": "text"
     },
@@ -154,7 +154,7 @@
       "id": 9,
       "conversationId": 1,
       "senderId": 2,
-      "content": "J'ai terminé la fonctionnalité de chat en temps réel",
+      "content": "I've completed the real-time chat feature",
       "timestamp": "2024-01-15T10:00:00Z",
       "type": "text"
     },
@@ -162,7 +162,7 @@
       "id": 10,
       "conversationId": 1,
       "senderId": 1,
-      "content": "Parfait ! Peux-tu faire un pull request ?",
+      "content": "Perfect! Can you create a pull request?",
       "timestamp": "2024-01-15T10:05:00Z",
       "type": "text"
     },
@@ -170,7 +170,7 @@
       "id": 11,
       "conversationId": 1,
       "senderId": 3,
-      "content": "Je vais tester ça tout de suite",
+      "content": "I'll test this right away",
       "timestamp": "2024-01-15T10:10:00Z",
       "type": "text"
     },
@@ -186,7 +186,7 @@
       "id": 13,
       "conversationId": 1,
       "senderId": 4,
-      "content": "J'ai ajouté les tests unitaires",
+      "content": "I've added the unit tests",
       "timestamp": "2024-01-15T10:20:00Z",
       "type": "text"
     },
@@ -194,7 +194,7 @@
       "id": 14,
       "conversationId": 1,
       "senderId": 1,
-      "content": "Excellent travail Diana !",
+      "content": "Excellent work Diana!",
       "timestamp": "2024-01-15T10:25:00Z",
       "type": "text"
     },
@@ -228,8 +228,8 @@
       "id": 1,
       "userId": 1,
       "type": "message",
-      "title": "Nouveau message",
-      "body": "Bob vous a envoyé un message",
+      "title": "New message",
+      "body": "Bob sent you a message",
       "data": {
         "conversationId": 2,
         "senderId": 2

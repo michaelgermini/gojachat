@@ -7,10 +7,10 @@ http://localhost:3001
 
 ## Endpoints
 
-### Utilisateurs
+### Users
 
 #### GET /users
-Récupère tous les utilisateurs.
+Retrieves all users.
 
 **Réponse:**
 ```json
@@ -27,16 +27,16 @@ Récupère tous les utilisateurs.
 ```
 
 #### GET /users/:id
-Récupère un utilisateur par son ID.
+Retrieves a user by their ID.
 
 #### POST /users
-Crée un nouvel utilisateur.
+Creates a new user.
 
 **Body:**
 ```json
 {
-  "username": "nouveau_user",
-  "email": "nouveau@gojachat.com",
+  "username": "new_user",
+  "email": "new@gojachat.com",
   "avatar": "https://i.pravatar.cc/150?img=5",
   "status": "online"
 }
@@ -45,20 +45,20 @@ Crée un nouvel utilisateur.
 ### Conversations
 
 #### GET /conversations
-Récupère toutes les conversations.
+Retrieves all conversations.
 
 **Réponse:**
 ```json
 [
   {
     "id": 1,
-    "name": "Équipe GojaChat",
+    "name": "GojaChat Team",
     "type": "group",
     "participants": [1, 2, 3, 4],
     "createdAt": "2024-01-10T08:00:00Z",
     "lastMessage": {
       "id": 15,
-      "content": "N'oubliez pas la réunion demain à 10h !",
+      "content": "Don't forget the meeting tomorrow at 10am!",
       "senderId": 1,
       "timestamp": "2024-01-15T10:30:00Z"
     }
@@ -67,15 +67,15 @@ Récupère toutes les conversations.
 ```
 
 #### GET /conversations/:id
-Récupère une conversation par son ID.
+Retrieves a conversation by its ID.
 
 #### POST /conversations
-Crée une nouvelle conversation.
+Creates a new conversation.
 
 **Body:**
 ```json
 {
-  "name": "Nouvelle conversation",
+  "name": "New conversation",
   "type": "direct",
   "participants": [1, 2]
 }
@@ -84,30 +84,30 @@ Crée une nouvelle conversation.
 ### Messages
 
 #### GET /messages
-Récupère tous les messages avec filtres optionnels.
+Retrieves all messages with optional filters.
 
-**Paramètres de requête:**
-- `conversationId`: ID de la conversation
-- `_sort`: Champ de tri (ex: timestamp)
-- `_order`: Ordre de tri (asc/desc)
+**Query parameters:**
+- `conversationId`: Conversation ID
+- `_sort`: Sort field (e.g., timestamp)
+- `_order`: Sort order (asc/desc)
 
-**Exemple:**
+**Example:**
 ```
 GET /messages?conversationId=1&_sort=timestamp&_order=asc
 ```
 
 #### GET /messages/:id
-Récupère un message par son ID.
+Retrieves a message by its ID.
 
 #### POST /messages
-Envoie un nouveau message.
+Sends a new message.
 
 **Body:**
 ```json
 {
   "conversationId": 1,
   "senderId": 1,
-  "content": "Bonjour tout le monde !",
+  "content": "Hello everyone!",
   "type": "text"
 }
 ```
@@ -115,17 +115,17 @@ Envoie un nouveau message.
 ### Notifications
 
 #### GET /notifications
-Récupère toutes les notifications avec filtres optionnels.
+Retrieves all notifications with optional filters.
 
-**Paramètres de requête:**
-- `userId`: ID de l'utilisateur
-- `read`: Statut de lecture (true/false)
+**Query parameters:**
+- `userId`: User ID
+- `read`: Read status (true/false)
 
 #### GET /notifications/:id
-Récupère une notification par son ID.
+Retrieves a notification by its ID.
 
 #### PATCH /notifications/:id
-Met à jour une notification (ex: marquer comme lue).
+Updates a notification (e.g., mark as read).
 
 **Body:**
 ```json
@@ -136,62 +136,62 @@ Met à jour une notification (ex: marquer comme lue).
 
 ## WebSocket Events
 
-### Événements côté client
+### Client-side events
 
-#### Connexion
+#### Connection
 ```javascript
 socket.emit('joinConversation', { conversationId: 1 });
 ```
 
-#### Envoi de message
+#### Send message
 ```javascript
 socket.emit('sendMessage', {
   conversationId: 1,
   senderId: 1,
-  content: "Bonjour !",
+  content: "Hello!",
   type: "text"
 });
 ```
 
-#### Mise à jour du statut
+#### Update status
 ```javascript
 socket.emit('updateStatus', { status: 'online' });
 ```
 
-### Événements côté serveur
+### Server-side events
 
-#### Nouveau message
+#### New message
 ```javascript
 socket.on('newMessage', (message) => {
-  console.log('Nouveau message:', message);
+  console.log('New message:', message);
 });
 ```
 
-#### Nouvelle notification
+#### New notification
 ```javascript
 socket.on('newNotification', (notification) => {
-  console.log('Nouvelle notification:', notification);
+  console.log('New notification:', notification);
 });
 ```
 
-#### Changement de statut utilisateur
+#### User status change
 ```javascript
 socket.on('userStatusChange', (data) => {
-  console.log('Statut utilisateur:', data);
+  console.log('User status:', data);
 });
 ```
 
-## Codes de statut HTTP
+## HTTP Status Codes
 
-- `200` - Succès
-- `201` - Créé
-- `400` - Requête invalide
-- `404` - Ressource non trouvée
-- `500` - Erreur serveur
+- `200` - Success
+- `201` - Created
+- `400` - Bad Request
+- `404` - Not Found
+- `500` - Server Error
 
-## Authentification
+## Authentication
 
-L'API utilise une authentification simple basée sur l'email. Pour les comptes de démonstration :
+The API uses simple email-based authentication. For demo accounts:
 
 - **Alice**: alice@gojachat.com / password
 - **Bob**: bob@gojachat.com / password
