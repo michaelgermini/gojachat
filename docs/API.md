@@ -198,26 +198,26 @@ The API uses simple email-based authentication. For demo accounts:
 - **Charlie**: charlie@gojachat.com / password
 - **Diana**: diana@gojachat.com / password
 
-## Exemples d'utilisation
+## Usage Examples
 
-### Récupérer les messages d'une conversation
+### Retrieve messages from a conversation
 ```bash
 curl "http://localhost:3001/messages?conversationId=1&_sort=timestamp&_order=asc"
 ```
 
-### Envoyer un message
+### Send a message
 ```bash
 curl -X POST http://localhost:3001/messages \
   -H "Content-Type: application/json" \
   -d '{
     "conversationId": 1,
     "senderId": 1,
-    "content": "Bonjour !",
+    "content": "Hello!",
     "type": "text"
   }'
 ```
 
-### Marquer une notification comme lue
+### Mark a notification as read
 ```bash
 curl -X PATCH http://localhost:3001/notifications/1 \
   -H "Content-Type: application/json" \
